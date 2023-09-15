@@ -96,7 +96,6 @@ Lacks advanced features like logarithmic driving
 **/
 void intermediateDrive() {
   while (true) {         // forever
-    while (true) {       // forever
       int deadZone = 15; // these joysticks are not accurate
       int drive = driveAxis().position();
       int turn;
@@ -115,7 +114,6 @@ void intermediateDrive() {
         intermediateDriveHelper(drive, turn); // actually drive
       }
     }
-  }
 }
 
 double logDrive(double v, double pow) { // drive with a curve to change how the
@@ -178,8 +176,6 @@ void advancedDrive() {
     int deadZone = 15; // these joysticks are not accurate
     int drive = driveAxis().position();
     int turn;
-
-    while (true) {
       // Drive/turn
       drive = driveAxis().position();
       turn = turnAxis().position();
@@ -204,7 +200,6 @@ void advancedDrive() {
       this_thread::sleep_for(
           50); // if using threads keep this, otherwise remove it
     }
-  }
 }
 
 int main() {
